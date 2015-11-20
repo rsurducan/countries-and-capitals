@@ -1,0 +1,21 @@
+<table>
+	<tr>
+		<td>Name</td>
+		<td>Country Code</td>
+		<td>Capital</td>
+		<td>Area in km2</td>
+		<td>Population</td>
+		<td>Continent</td>
+	</tr>
+	<tr ng-repeat="country in countries">
+		<td>
+			<a ng-ref="#/countries/{{country.countryCode | uppercase}}/capital">{{country.countryName}}</a>
+		</td>
+		<td>{{country.countryCode}}</td>
+		<td>{{country.capital}}</td>
+		<td>{{country.areaInSqKm | number:0}}</td>
+		<td>{{country.population | number:0}}</td>
+		<td>{{country.continentName}}</td>
+	</tr>
+</table>
+<a href="#/">Home</a>
