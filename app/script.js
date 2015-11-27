@@ -1,12 +1,12 @@
 angular.module('ccApp', ['ngRoute'])
-    .config(['$routeProvider', function($routeProvider){
+    .config(['$routeProvider', function($routeProvider, $locationProvider){
         $routeProvider.when('/', {
             templateUrl : 'home.html',
             controller : 'HomeCtrl'
         }).when('/countries', {
             templateUrl : 'countries.html',
             controller : 'CountriesCtrl'
-        }).when('/countries/:country/capital', {
+        }).when('/countries/:country', {
             templateUrl : 'countryDetails.html',
             controller : 'CountryDetailsCtrl'
         }).when('/error', {
@@ -37,7 +37,7 @@ angular.module('ccApp', ['ngRoute'])
             url : countryUrl
         })
         .success(function(response) {
-            $scope.country = response.geonames;
+            $scope.country = response.geonames[0];
         })
         .error(function() {
             alert('error');

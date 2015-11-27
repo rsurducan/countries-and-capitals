@@ -9,7 +9,7 @@
 	</tr>
 	<tr ng-repeat="country in countries">
 		<td>
-			<a ng-ref="#/countries/{{country.countryCode | uppercase}}/capital">{{country.countryName}}</a>
+			<a href="#/countries/{{country.countryCode | uppercase}}">{{country.countryName}}</a>
 		</td>
 		<td>{{country.countryCode}}</td>
 		<td>{{country.capital}}</td>
